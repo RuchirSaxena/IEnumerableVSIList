@@ -1,0 +1,58 @@
+﻿Ienumerable
+================
+IEnumerable is the mother of all interfaces ie. It is the base interface
+It has a method called as GetEnumerator() and it returns IEnumerator
+
+public IEnumerator GetEnumerator()
+        {
+            return EmpData.GetEnumerator();
+        }
+
+Now , in IEnumerator we have methods like
+1. bool MoveNext()
+2. void Reset()
+and also has a property ie. 
+object Current
+
+ 
+    //     Supports a simple iteration over a non-generic collection.
+   
+    public interface IEnumerator
+    {
+        object Current { get; }
+	    bool MoveNext();
+        void Reset();
+    }
+
+                               IEnumerable
+							       ||
+								   ||
+    							   ||
+							   ICollection
+							       ||
+								   ||
+								   ||
+		ILIST	<===================================> IDictionary
+		 ||												   ||
+		 ||												   ||
+		 ||												   ||
+	 ArrayList											Hashtable
+			
+
+Note: foreach can be used only those collection objects which implements interface IEnumerator	
+
+Q.What is the limitation of using foreach?
+Ans .foreach can be used only those collection objects which implements interface IEnumerator	
+
+Q.What is IEnumerator and what is the significance of IEnumerable ?
+Ans .The purpose of IEnumerable is to get Ienumerator using which we can loop through collection
+
+ArrayList 
+================
+Arraylist has also a method sort which will work fine on string or interger 
+but if we want to sort complex objects(Employee Class) we need to implement IComparable Interface
+
+Futher if have the facility to edit our class we use IComparable otherwise if its a 
+third partly class then we have to create a class and then implement IComparer
+            	 
+		
